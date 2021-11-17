@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
+  <dependencies>
+    <dependency>
+      <groupId>nl.jam.com.splunk.logging</groupId>
+      <artifactId>splunk-library-javalogging</artifactId>
+      <version>1.11.0</version>
+    </dependency>
+  </dependencies>
+  
+  <repositories>
+    <repository>
+      <id>splunk-artifactory</id>
+      <name>Splunk Releases</name>
+      <url>https://splunk.jfrog.io/splunk/ext-releases-local</url>
+    </repository>
+    <repository>
+      <id>repsy</id>
+      <url>https://repo.repsy.io/mvn/jam-it/public</url>
+    </repository>
+  </repositories>
+  
+</project>
