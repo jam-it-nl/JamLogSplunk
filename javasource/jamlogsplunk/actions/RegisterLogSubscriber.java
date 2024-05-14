@@ -92,9 +92,13 @@ public class RegisterLogSubscriber extends CustomJavaAction<java.lang.Void>
 
 			String type = null;
 			String sendMode = null;
-			long batchInterval = 0;
-			long batchCount = 0;
-			long batchSize = 0;
+
+			// If all 3 are 0 every event is sent immediately to the server, but this can result in a 'maximum concurrent connections' error
+			// So trying to set default values, batchInterval > 0 ensures events are send to the server even if batchCount or batchSize are not reached
+			long batchInterval = HttpEventCollectorSender.DefaultBatchInterval;
+			long batchCount = HttpEventCollectorSender.DefaultBatchCount;
+			long batchSize = HttpEventCollectorSender.DefaultBatchSize;
+			
 			Map<String, String> metadata = new HashMap<>();
 			HttpEventCollectorSender.TimeoutSettings timeoutSettings = new HttpEventCollectorSender.TimeoutSettings();
 
